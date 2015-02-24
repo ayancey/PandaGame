@@ -2,17 +2,20 @@
 int width = 1920;
 int height = 1080;
 
-ArrayList<Object> objects = new ArrayList<Object>();
+ArrayList<DrawableObject> objects = new ArrayList<DrawableObject>();
 
 void setup()
 { 
+  frameRate(60);
   size(width, height);
   background(100, 100, 100);
+  
+  objects.add(new Turret());
 }
 
 void draw()
 {
   for (int i = 0; i < objects.size();i++) {
-     objects.get(i).display();
+     objects.get(i).run();
   }
 }
