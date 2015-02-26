@@ -10,7 +10,8 @@ void setup()
   size(width, height);
   background(100, 100, 100);
   
-  objects.add(new ExampleObject());
+  DrawableThing theobject = new ExampleObject();
+  objects.add(theobject);
 }
 
 void draw()
@@ -19,5 +20,6 @@ void draw()
   for (int i = 0; i < objects.size();i++) {
      objects.get(i).update();
      objects.get(i).display();
+     println(str(objects.get(i).location.x) + " - " + str(objects.get(i).location.x));
   }
 }
